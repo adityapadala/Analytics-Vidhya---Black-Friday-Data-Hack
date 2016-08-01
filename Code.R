@@ -1,5 +1,5 @@
 getwd()
-setwd('C:/Users/VISWANATH/Desktop/Aditya/Study/AnalyticsVidhya/Raw Data')
+setwd('/path/Raw Data')
 
 library(rpart)
 library(MASS)
@@ -96,8 +96,7 @@ head(test_sub_dt)
 
 set.seed(1)
 model_rf <- randomForest(Purchase ~ Gender+Age+Occupation+City_Category+Stay_In_Current_City_Years+
-                    Marital_Status+Product_Category_1+Product, data = training,
-                    ntree = 50)
+                         Marital_Status+Product_Category_1+Product, data = training, ntree = 50)
 summary(model_rf)
 
 #predicting on the test dataset 
