@@ -42,7 +42,6 @@ validation<- train[-index,]
 training$Product <- 3 - is.na(training$Product_Category_2)- is.na(training$Product_Category_3)
 validation$Product <- 3 - is.na(validation$Product_Category_2)- is.na(validation$Product_Category_3) 
 test$Product <- 3 - is.na(test$Product_Category_2)- is.na(test$Product_Category_3)
-
 val_actual<-validation$Purchase
 head(val_actual)
 length(val_actual)
@@ -63,7 +62,6 @@ rmse #3004.57
 pred_test_lm <- predict(model_lm, test)
 test_sub_lm<- data.frame(test$User_ID,test$Product_ID,pred_test_lm)
 head(test_sub_lm)
-
 str(training)
 
 ###running the model using Decsion Trees
@@ -103,7 +101,3 @@ summary(model_rf)
 pred_test_rf <- predict(model_rf, test)
 test_sub_rf <- data.frame(test$User_ID,test$Product_ID,pred_test_rf)
 head(test_sub_rf)
-
-
-
-
